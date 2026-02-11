@@ -384,6 +384,8 @@ section.gallery-section .container {
 }
 
 .preloader-counter {
+  position: absolute;
+  top: calc(50% + 50px);
   font-family: var(--font-body);
   font-size: clamp(80px, 15vw, 107px);
   color: var(--gold-primary);
@@ -2704,6 +2706,11 @@ section.section-transparent:has(.stores-grid) {
     height: 45px !important;
   }
 
+  .page-transition-overlay .transition-logo {
+    width: 45px;
+    height: 45px;
+  }
+
   .header {
     padding: 20px;
     gap: 15px;
@@ -4331,8 +4338,8 @@ p:not(.footer-definition):not(.footer-copyright),
 .page-transition-overlay .transition-logo {
   position: relative;
   z-index: 1;
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   opacity: 0;
   transition: opacity 0.3s ease 0.2s;
 }
@@ -4443,7 +4450,6 @@ select:focus-visible,
 .preloader-logo {
   width: 60px;
   height: 60px;
-  margin-bottom: 20px;
   opacity: 0.8;
 }
 
@@ -5683,8 +5689,8 @@ select:focus-visible,
     }
 
     .preloader-logo {
-      max-width: 90vw;
-      height: auto;
+      width: 60px;
+      height: 60px;
     }
 
     .preloader-counter {
@@ -5718,50 +5724,115 @@ select:focus-visible,
     }
 
 /* =============================================
-   PAGE: 404 (extracted from inline styles)
+   PAGE: 404
    ============================================= */
 .page-404 {
-  min-height: 70vh;
+  position: relative;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 60px 20px;
+  padding: 80px 20px;
+  overflow: hidden;
+}
+
+/* Broken glass background element */
+.page-404-glass {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(280px, 50vw, 500px);
+  height: auto;
+  opacity: 0.04;
+  pointer-events: none;
+  animation: glass-fade-in 2s ease forwards;
+}
+
+@keyframes glass-fade-in {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+  to   { opacity: 0.04; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* S logo above 404 */
+.page-404-logo {
+  width: 50px;
+  height: 50px;
+  opacity: 0;
+  margin-bottom: 24px;
+  animation: fade-up 0.8s ease 0.3s forwards;
+}
+
+/* Gold divider */
+.page-404-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--gold-primary);
+  margin-bottom: 24px;
+  opacity: 0;
+  animation: fade-up 0.8s ease 0.5s forwards;
 }
 
 .page-404 h1 {
   font-family: var(--font-heading);
-  font-size: clamp(4rem, 12vw, 8rem);
+  font-size: clamp(5rem, 15vw, 10rem);
   color: var(--gold-primary);
-  margin: 0 0 0.25em;
+  margin: 0 0 0.1em;
+  font-weight: 200;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  opacity: 0;
+  animation: fade-up 0.8s ease 0.7s forwards;
+}
+
+.page-404-subtitle {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 3vw, 1.4rem);
+  color: var(--gold-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
   font-weight: 300;
-  letter-spacing: 0.02em;
+  margin: 0 0 1.5rem;
+  opacity: 0;
+  animation: fade-up 0.8s ease 0.9s forwards;
 }
 
 .page-404 p {
   font-family: var(--font-body);
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 1.15rem;
-  max-width: 420px;
-  margin: 0 0 2rem;
-  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 1.05rem;
+  max-width: 380px;
+  margin: 0 0 2.5rem;
+  line-height: 1.7;
+  font-weight: 300;
+  opacity: 0;
+  animation: fade-up 0.8s ease 1.1s forwards;
 }
 
 .page-404 .btn-home {
   display: inline-block;
-  padding: 14px 32px;
+  padding: 14px 36px;
   font-family: var(--font-body);
-  font-size: 0.95rem;
-  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold-primary);
-  border: 1px solid var(--gold-primary);
+  border: 1px solid rgba(188, 139, 11, 0.4);
   text-decoration: none;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: border-color 0.4s ease, background 0.4s ease, color 0.4s ease;
+  opacity: 0;
+  animation: fade-up 0.8s ease 1.3s forwards;
 }
 
 .page-404 .btn-home:hover {
   background: var(--gold-primary);
+  border-color: var(--gold-primary);
   color: #0a0a0a;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(15px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
