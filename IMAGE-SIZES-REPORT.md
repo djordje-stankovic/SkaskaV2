@@ -98,17 +98,17 @@ Ako želiš, sledeći korak može biti skripta za kompresiju (npr. Node + sharp)
 
 1. **Očisti Viber cache**  
    Pošalji link sa parametrom (često resetuje cache):  
-   `https://skaskabrandy.com/commitment.html?v=2` ili `?t=202602`  
+   `https://djordje-stankovic.github.io/SkaskaV2/commitment.html?v=2` ili `?t=202602`  
    Ako posle toga vidiš sliku → problem je bio cache.
 
 2. **Manja preview slika (&lt; 300 KB)**  
    Viber često odbija slike preko ~300–500 KB. Možeš napraviti manju verziju npr. **600×315 px, ispod 200–300 KB** (npr. `hero-commitment-preview.jpg`) i u HTML-u staviti:
    ```html
-   <meta property="og:image" content="https://skaskabrandy.com/images/hero-commitment-preview.jpg">
+   <meta property="og:image" content="https://djordje-stankovic.github.io/SkaskaV2/images/hero-commitment-preview.jpg">
    <meta property="og:image:width" content="600">
    <meta property="og:image:height" content="315">
    <meta property="og:image:type" content="image/jpeg">
    ```
 
 3. **Proveri brzinu slike**  
-   Otvori URL slike u incognito (npr. `https://skaskabrandy.com/images/hero-commitment.jpg`) – treba da se učita za &lt; 1–2 s. Ako je sporo, smanji veličinu fajla (TinyPNG, Squoosh).
+   Otvori URL slike u incognito (npr. `https://djordje-stankovic.github.io/SkaskaV2/images/hero-commitment.jpg`) – treba da se učita za &lt; 1–2 s. Ako je sporo, smanji veličinu fajla (TinyPNG, Squoosh).

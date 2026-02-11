@@ -1,11 +1,11 @@
 # Robots.txt for Skaska
-# https://skaskabrandy.com/
+# https://djordje-stankovic.github.io/SkaskaV2/
 
 User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://skaskabrandy.com/sitemap.xml
+Sitemap: https://djordje-stankovic.github.io/SkaskaV2/sitemap.xml
 
 User-agent: Googlebot
 Allow: /
