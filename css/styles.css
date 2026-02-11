@@ -1501,6 +1501,7 @@ section.section-transparent:has(.stores-grid) {
   text-align: justify;
   text-justify: inter-word;
   hyphens: auto;
+  -webkit-hyphens: auto;
   line-height: 1.75;
 }
 
@@ -2608,7 +2609,9 @@ section.section-transparent:has(.stores-grid) {
   }
 
   .col-text p {
-    text-align: left;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
   }
 
   .two-col.reverse {
@@ -2871,10 +2874,8 @@ section.section-transparent:has(.stores-grid) {
     padding: 0 15px;
     margin-top: 20px;
     text-align: justify !important;
-    text-align-last: left !important;
     hyphens: auto;
     -webkit-hyphens: auto;
-    -moz-hyphens: auto;
   }
 
   .intro-text p {
@@ -2882,27 +2883,24 @@ section.section-transparent:has(.stores-grid) {
     line-height: 1.8;
     margin-bottom: 20px;
     text-align: justify !important;
-    text-align-last: left !important;
     hyphens: auto;
     -webkit-hyphens: auto;
-    -moz-hyphens: auto;
     color: #FFFFFF !important;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   }
 
-  /* Apply justify text alignment to all paragraphs on mobile */
+  /* Justify all paragraphs on mobile - text even on both sides */
   .section-content p,
   .col-text p,
   .section p,
   body[data-page="commitment"] .col-text p,
   body[data-page="commitment"] .section-content p,
   .about-text p,
-  .store-card p {
+  .store-card p,
+  .feature-box p {
     text-align: justify !important;
-    text-align-last: left !important;
     hyphens: auto;
     -webkit-hyphens: auto;
-    -moz-hyphens: auto;
   }
 
   /* Where to Buy – tekst centriran na mobilnoj kao na desktopu */
@@ -3190,10 +3188,8 @@ section.section-transparent:has(.stores-grid) {
   .intro-text {
     margin-top: 15px;
     text-align: justify !important;
-    text-align-last: left !important;
     hyphens: auto;
     -webkit-hyphens: auto;
-    -moz-hyphens: auto;
   }
 
   .intro-text p {
@@ -3201,27 +3197,24 @@ section.section-transparent:has(.stores-grid) {
     line-height: 1.7;
     margin-bottom: 15px;
     text-align: justify !important;
-    text-align-last: left !important;
     hyphens: auto;
     -webkit-hyphens: auto;
-    -moz-hyphens: auto;
     color: #FFFFFF !important;
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
   }
 
-  /* Apply justify text alignment to all paragraphs on small mobile */
+  /* Justify all paragraphs on small mobile */
   .section-content p,
   .col-text p,
   .section p,
   body[data-page="commitment"] .col-text p,
   body[data-page="commitment"] .section-content p,
   .about-text p,
-  .store-card p {
+  .store-card p,
+  .feature-box p {
     text-align: justify !important;
-    text-align-last: left !important;
     hyphens: auto;
     -webkit-hyphens: auto;
-    -moz-hyphens: auto;
   }
 
   /* Where to Buy – tekst centriran na mobilnoj kao na desktopu */
@@ -3865,13 +3858,17 @@ body[data-page="commitment"] #why {
   }
   
   body[data-page="commitment"] .col-text {
-    text-align: left !important;
+    text-align: justify !important;
     padding: 0 15px;
+    hyphens: auto;
+    -webkit-hyphens: auto;
   }
-  
+
   body[data-page="commitment"] .col-text p {
     font-size: 1rem;
-    text-align: left !important;
+    text-align: justify !important;
+    hyphens: auto;
+    -webkit-hyphens: auto;
   }
   
   body[data-page="commitment"] .col-text h2 {
@@ -3899,7 +3896,9 @@ body[data-page="commitment"] #why {
   
   #why .two-col > .col-text {
     flex: 1 1 100% !important;
-    text-align: left !important;
+    text-align: justify !important;
+    hyphens: auto;
+    -webkit-hyphens: auto;
   }
   
   #why .video-thumbnail {
@@ -4823,6 +4822,10 @@ select:focus-visible,
       margin-bottom: 20px;
       line-height: 1.8;
       color: rgba(255, 255, 255, 0.92);
+      text-align: justify;
+      text-justify: inter-word;
+      hyphens: auto;
+      -webkit-hyphens: auto;
     }
     .stat-label {
       color: rgba(255, 255, 255, 0.88);
