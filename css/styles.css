@@ -53,7 +53,7 @@ html {
 body {
   font-family: var(--font-body);
   font-weight: 300;
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.75;
   color: var(--white);
   background-color: var(--black);
@@ -186,7 +186,7 @@ h3 {
 p:not(.footer-definition):not(.footer-copyright) {
   font-family: 'Josefin Sans', sans-serif !important;
   font-weight: 300 !important;
-  font-size: 17px !important;
+  font-size: 19px !important;
   color: rgba(255, 255, 255, 0.92);
   line-height: 1.75;
   letter-spacing: 0.01em;
@@ -220,7 +220,7 @@ p:not(.footer-definition):not(.footer-copyright) {
 .buy-section-title,
 .buy-section-subtitle,
 .become-partner p:not(.footer-definition):not(.footer-copyright) {
-  font-size: 17px !important;
+  font-size: 19px !important;
 }
 
 /* Ensure menu keeps Work Sans font */
@@ -364,7 +364,7 @@ section.gallery-section .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   z-index: 10000;
   transition: opacity 0.5s ease, visibility 0.5s ease;
 }
@@ -376,16 +376,21 @@ section.gallery-section .container {
 
 .preloader-logo {
   display: block;
-  position: relative;
+  position: absolute;
   z-index: 2;
-  width: 60px;
-  height: 60px;
+  top: calc(50% - 160px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
   opacity: 0.8;
 }
 
 .preloader-counter {
   position: absolute;
-  top: calc(50% + 50px);
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-family: var(--font-body);
   font-size: clamp(80px, 15vw, 107px);
   color: var(--gold-primary);
@@ -1061,18 +1066,19 @@ body[data-page="contact"] .header.scrolled {
   -webkit-backface-visibility: hidden;
 }
 
-/* News hero: desktop verzija */
+/* News hero: desktop verzija – spuštena ka dnu */
 @media (min-width: 769px) {
   .news-hero-bg.image-background-fixed {
-    background-size: 92%;
-    background-position: center 57%;
+    background-size: cover;
+    background-position: center 71%;
   }
 }
 
 /* News hero: mobilna verzija */
 @media (max-width: 768px) {
   .news-hero-bg.image-background-fixed {
-    background-size: 127%;
+    background-size: cover;
+    background-position: 36%;
   }
 }
 
@@ -1127,7 +1133,7 @@ body[data-page="contact"] .header.scrolled {
 .hero-intro {
   font-family: 'Josefin Sans', sans-serif !important;
   font-weight: 300 !important;
-  font-size: 17px !important;
+  font-size: 19px !important;
   line-height: 1.75;
   letter-spacing: 0.01em;
   max-width: 600px;
@@ -1231,7 +1237,7 @@ body[data-page="contact"] .header.scrolled {
   font-weight: 300 !important;
   max-width: 600px;
   margin: 0 auto;
-  font-size: 17px !important;
+  font-size: 19px !important;
   color: var(--white);
   opacity: 0;
   animation: fadeInUp 1s ease 1s forwards;
@@ -1496,7 +1502,7 @@ section.section-transparent:has(.stores-grid) {
 .col-text p {
   font-family: 'Josefin Sans', sans-serif !important;
   font-weight: 300 !important;
-  font-size: 17px !important;
+  font-size: 19px !important;
   margin-bottom: 20px;
   text-align: justify;
   text-justify: inter-word;
@@ -2703,15 +2709,25 @@ section.section-transparent:has(.stores-grid) {
     --section-padding: 50px;
   }
 
+  body {
+    font-size: 17px;
+  }
+
   /* Preloader – manji logo na mobilnoj verziji */
   .preloader .preloader-logo {
-    width: 45px !important;
-    height: 45px !important;
+    width: 70px !important;
+    height: 70px !important;
+    top: calc(50% - 120px) !important;
+  }
+
+  .preloader-counter {
+    font-size: clamp(60px, 12vw, 80px) !important;
   }
 
   .page-transition-overlay .transition-logo {
-    width: 45px !important;
-    height: 45px !important;
+    width: 65px !important;
+    height: 65px !important;
+    top: calc(50% - 120px) !important;
   }
 
   .header {
@@ -2903,6 +2919,14 @@ section.section-transparent:has(.stores-grid) {
     -webkit-hyphens: auto;
   }
 
+  /* Preserve right-aligned signatures */
+  .col-text p.text-right,
+  .col-text p.ognjen-author,
+  p.text-right,
+  .ognjen-author {
+    text-align: right !important;
+  }
+
   /* Where to Buy – tekst centriran na mobilnoj kao na desktopu */
   body[data-page="where-to-buy"] .section-content,
   body[data-page="where-to-buy"] .section-content .col-text,
@@ -3018,6 +3042,22 @@ section.section-transparent:has(.stores-grid) {
   /* Još manji logo na malim ekranima */
   .logo-icon {
     height: 50px !important;
+  }
+
+  .preloader .preloader-logo {
+    width: 55px !important;
+    height: 55px !important;
+    top: calc(50% - 100px) !important;
+  }
+
+  .preloader-counter {
+    font-size: clamp(50px, 11vw, 65px) !important;
+  }
+
+  .page-transition-overlay .transition-logo {
+    width: 50px !important;
+    height: 50px !important;
+    top: calc(50% - 100px) !important;
   }
 
   .logo-text {
@@ -3215,6 +3255,14 @@ section.section-transparent:has(.stores-grid) {
     text-align: justify !important;
     hyphens: auto;
     -webkit-hyphens: auto;
+  }
+
+  /* Preserve right-aligned signatures */
+  .col-text p.text-right,
+  .col-text p.ognjen-author,
+  p.text-right,
+  .ognjen-author {
+    text-align: right !important;
   }
 
   /* Where to Buy – tekst centriran na mobilnoj kao na desktopu */
@@ -3799,7 +3847,7 @@ body[data-page="commitment"] .col-text p,
 body[data-page="commitment"] .section-content p {
   font-family: 'Josefin Sans', sans-serif !important;
   font-weight: 300 !important;
-  font-size: 17px !important;
+  font-size: 19px !important;
   line-height: 1.75 !important;
   letter-spacing: 0.01em !important;
 }
@@ -4069,7 +4117,7 @@ h2[data-i18n="distillery-intro-title"] {
 .col-text.animate-on-scroll[style*="max-width: 800px"] p:first-of-type:not([data-i18n="paths-text"]):not([data-i18n="ognjen-quote"]) {
   font-family: 'Josefin Sans', sans-serif !important;
   font-weight: 300 !important;
-  font-size: 17px !important;
+  font-size: 19px !important;
   line-height: 1.75 !important;
   letter-spacing: 0.01em !important;
   -webkit-font-smoothing: antialiased;
@@ -4081,7 +4129,7 @@ html[lang="sr"] .col-text.animate-on-scroll[style*="max-width: 800px"] p:first-o
 body[lang="sr"] .col-text.animate-on-scroll[style*="max-width: 800px"] p:first-of-type {
   font-family: 'Josefin Sans', sans-serif !important;
   font-weight: 300 !important;
-  font-size: 17px !important;
+  font-size: 19px !important;
   line-height: 1.75 !important;
   letter-spacing: 0.01em !important;
   -webkit-font-smoothing: antialiased;
@@ -4093,7 +4141,7 @@ body[lang="sr"] .col-text.animate-on-scroll[style*="max-width: 800px"] p:first-o
 .col-text p[data-i18n="paths-text"] {
   font-family: 'Josefin Sans', sans-serif !important;
   font-weight: 300 !important;
-  font-size: 17px !important;
+  font-size: 19px !important;
   line-height: 1.75 !important;
   letter-spacing: 0.01em !important;
   -webkit-font-smoothing: antialiased;
@@ -4123,10 +4171,12 @@ body[lang="sr"] .col-text.animate-on-scroll[style*="max-width: 800px"] p:first-o
     font-size: 1rem !important;
   }
   
+  .col-text p.ognjen-author,
   .ognjen-author {
     font-size: 1.1rem !important;
+    text-align: right !important;
   }
-  
+
   .ognjen-title {
     font-size: 0.95rem !important;
   }
@@ -4184,7 +4234,7 @@ p:not(.footer-definition):not(.footer-copyright),
 .about-text p:not(.footer-definition),
 .store-card p:not(.footer-definition),
 .intro-text p:not(.footer-definition) {
-  font-size: 17px !important;
+  font-size: 19px !important;
 }
 
 /* Mobile: All paragraphs font size */
@@ -4335,10 +4385,13 @@ p:not(.footer-definition):not(.footer-copyright),
 }
 
 .page-transition-overlay .transition-logo {
-  position: relative;
+  position: absolute;
   z-index: 1;
-  width: 60px;
-  height: 60px;
+  top: calc(50% - 160px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
   opacity: 0;
   transition: opacity 0.3s ease 0.2s;
 }
@@ -4810,7 +4863,7 @@ select:focus-visible,
     .about-text h2 {
       color: var(--gold-primary);
       margin-bottom: 10px;
-      font-size: 0.9rem;
+      font-size: 1.2rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
     }
@@ -4892,7 +4945,7 @@ select:focus-visible,
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto auto;
       gap: 40px 60px;
-      align-items: start;
+      align-items: center;
     }
     .about-section-process .about-media { grid-column: 1; grid-row: 1; }
     .about-section-process .about-text { grid-column: 2; grid-row: 1; }
@@ -5666,26 +5719,8 @@ select:focus-visible,
     }
 
     /* Custom Preloader Styles for Where to Buy Page */
-    .preloader {
-      background-image: url('images/hero/VAL04129.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
-    .preloader::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.3);
-      z-index: -1;
-    }
-
     .preloader-counter {
-      color: #FFFFFF;
+      color: var(--gold-primary);
     }
 
 /* =============================================
@@ -5712,6 +5747,10 @@ select:focus-visible,
 
     .leaflet-popup-close-button {
       color: #BC8B0B !important;
+    }
+
+    .leaflet-control-attribution {
+      display: none !important;
     }
 
 /* =============================================
