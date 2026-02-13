@@ -4022,6 +4022,12 @@ body[data-page="commitment"] #why {
   aspect-ratio: 4/3;
 }
 
+/* Force gallery images visible - don't depend on JS IntersectionObserver */
+.gallery-grid-simple .gallery-item.animate-on-scroll {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
 .gallery-grid-simple .gallery-item img {
   width: 100%;
   height: 100%;
