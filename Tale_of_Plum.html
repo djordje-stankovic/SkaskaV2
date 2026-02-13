@@ -302,20 +302,24 @@
   <div class="age-modal" id="ageModal" role="dialog" aria-modal="true" aria-label="Age verification">
     <div class="age-modal-content">
       <div class="age-modal-main">
-        <img src="images/logo/Skaska-vratnice.png" alt="Skaska" class="age-modal-logo">
-        <h2 class="age-modal-title">ARE YOU OF LEGAL DRINKING AGE?</h2>
-        <div class="age-modal-buttons">
-          <button class="age-modal-btn yes" id="ageYes">YES</button>
-          <button class="age-modal-btn no" id="ageNo">NO</button>
+        <div class="age-modal-logo-wrapper">
+          <div class="age-modal-logo-text">
+            <img src="images/logo/Skaska-vratnice.png" alt="Skaska" class="age-modal-logo-graphic">
+          </div>
         </div>
-        <p class="age-modal-disclaimer">
-          By entering this site you agree to our Terms of Use and Privacy Policy. Please enjoy responsibly.
+        <p class="age-modal-text" data-i18n="age-text">You must be of legal purchase age to enter this website.</p>
+        <div class="age-modal-buttons">
+          <div class="age-modal-btn yes" id="ageYes" data-i18n="age-yes">yes</div>
+          <div class="age-modal-btn no" id="ageNo" data-i18n="age-no">no</div>
+        </div>
+        <p class="age-modal-disclaimer" data-i18n="age-disclaimer">
+          By pressing "YES" and entering this site I agree to the Terms & Conditions and Privacy Policy.
         </p>
       </div>
       <div class="age-modal-denied">
         <div class="age-modal-denied-icon">🚫</div>
-        <h3>Access Denied</h3>
-        <p>You must be of legal drinking age to enter this website.</p>
+        <h3 data-i18n="age-denied-title">Access Denied</h3>
+        <p data-i18n="age-denied-text">You must be of legal drinking age to enter this website.</p>
       </div>
     </div>
   </div>
