@@ -34,39 +34,67 @@ document.addEventListener('DOMContentLoaded', function() {
    AGE VERIFICATION
    ============================================= */
 function initAgeVerification() {
-  const modal = document.getElementById('ageModal');
+  var modal = document.getElementById('ageModal');
   if (!modal) return;
 
-  const yesBtn = document.getElementById('ageYes');
-  const noBtn = document.getElementById('ageNo');
+  var yesBtn = document.getElementById('ageYes');
+  var noBtn = document.getElementById('ageNo');
 
   // Check if already verified
   if (localStorage.getItem('skaska-age-verified') === 'true') {
     modal.classList.add('hidden');
-    document.body.style.overflow = 'auto';
+    document.body.classList.add('age-verified');
+    document.documentElement.style.overflow = '';
+    document.body.style.overflow = '';
     return;
   }
 
-  // Block scrolling while modal is open (position: fixed needed for iOS Safari)
+  // Block scrolling - overflow hidden on both html and body
+  // Do NOT use position:fixed on body (breaks iOS Safari fixed children)
+  document.documentElement.style.overflow = 'hidden';
   document.body.style.overflow = 'hidden';
-  document.body.style.position = 'fixed';
-  document.body.style.width = '100%';
-  document.body.style.top = '0';
+
+  // JS fallback: force critical inline styles for iOS Safari
+  // Guarantees rendering even if CSS fails to apply correctly
+  modal.style.position = 'fixed';
+  modal.style.top = '0';
+  modal.style.left = '0';
+  modal.style.width = '100%';
+  modal.style.height = '100%';
+  modal.style.zIndex = '99999';
+  modal.style.background = 'rgba(228, 224, 216, 0.92)';
+  modal.style.overflowY = 'auto';
+
+  var content = modal.querySelector('.age-modal-content');
+  if (content) {
+    content.style.background = '#ffffff';
+    content.style.position = 'absolute';
+    content.style.top = '50%';
+    content.style.left = '50%';
+    content.style.webkitTransform = 'translate(-50%, -50%)';
+    content.style.transform = 'translate(-50%, -50%)';
+    content.style.maxWidth = '750px';
+    content.style.width = '90%';
+    content.style.boxShadow = '2px 8px 23px 3px rgba(0,0,0,0.2)';
+  }
 
   // Yes button - verify and allow access
-  yesBtn?.addEventListener('click', function() {
-    localStorage.setItem('skaska-age-verified', 'true');
-    modal.classList.add('hidden');
-    document.body.style.overflow = 'auto';
-    document.body.style.position = '';
-    document.body.style.width = '';
-    document.body.style.top = '';
-  });
+  if (yesBtn) {
+    yesBtn.addEventListener('click', function() {
+      localStorage.setItem('skaska-age-verified', 'true');
+      modal.classList.add('hidden');
+      document.body.classList.add('age-verified');
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
+    });
+  }
 
   // No button - show denied message
-  noBtn?.addEventListener('click', function() {
-    modal.classList.add('denied');
-  });
+  if (noBtn) {
+    noBtn.addEventListener('click', function() {
+      modal.classList.add('denied');
+    });
+  }
 }
 
 /* =============================================

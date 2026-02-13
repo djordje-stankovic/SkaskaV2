@@ -3360,29 +3360,23 @@ section.section-transparent:has(.stores-grid) {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
   width: 100%;
   height: 100%;
-  height: 100dvh;
   background: rgba(228, 224, 216, 0.92);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 99999;
   opacity: 1;
   visibility: visible;
   transition: opacity 1.2s ease, visibility 1.2s ease;
-  -webkit-overflow-scrolling: touch;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .age-modal.hidden,
 body.age-verified .age-modal {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  display: none;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  display: none !important;
 }
 
 .age-modal-content {
@@ -3392,38 +3386,33 @@ body.age-verified .age-modal {
   max-width: 750px;
   width: 90%;
   text-align: center;
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   -webkit-animation: modalFadeIn 1.2s ease;
   animation: modalFadeIn 1.2s ease;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  margin: auto;
-  flex-shrink: 0;
 }
 
 @-webkit-keyframes modalFadeIn {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(0.95) translateY(20px);
-    transform: scale(0.95) translateY(20px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1) translateY(0);
-    transform: scale(1) translateY(0);
-  }
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 @keyframes modalFadeIn {
-  from {
-    opacity: 0;
-    -webkit-transform: scale(0.95) translateY(20px);
-    transform: scale(0.95) translateY(20px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: scale(1) translateY(0);
-    transform: scale(1) translateY(0);
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@media (max-height: 600px) {
+  .age-modal-content {
+    position: relative;
+    top: auto;
+    left: auto;
+    -webkit-transform: none;
+    transform: none;
+    margin: 20px auto;
   }
 }
 
@@ -3580,44 +3569,13 @@ body.age-verified .age-modal {
 
 @media (max-width: 480px) {
   .age-modal-content {
-    padding: 40px 30px;
+    padding: 50px 40px;
+    max-width: 90%;
+    width: 90%;
   }
 
   .age-modal-logo-graphic {
     width: 350px;
-  }
-  
-  .age-modal-content {
-    padding: 50px 40px;
-    max-width: 90%;
-  }
-  
-  .age-modal-buttons {
-    gap: 80px;
-  }
-  
-  .age-modal-btn {
-    font-size: 24px;
-    color: #BC8B0B !important;
-    font-weight: 700 !important;
-    border-bottom: 2px solid #BC8B0B;
-  }
-  
-  .age-modal-btn:hover {
-    color: #BC8B0B !important;
-    border-bottom-color: transparent;
-  }
-  
-  .age-modal-text {
-    font-size: 20px;
-    color: #000000 !important;
-    font-weight: 700 !important;
-  }
-  
-  .age-modal-disclaimer {
-    font-size: 15px;
-    color: #000000 !important;
-    font-weight: 600 !important;
   }
 
   .age-modal-logo-brand {
@@ -3642,18 +3600,18 @@ body.age-verified .age-modal {
     font-weight: 700 !important;
     border-bottom: 2px solid #BC8B0B;
   }
-  
+
   .age-modal-btn:hover {
     color: #BC8B0B !important;
     border-bottom-color: transparent;
   }
-  
+
   .age-modal-text {
     font-size: 18px;
     color: #000000 !important;
     font-weight: 700 !important;
   }
-  
+
   .age-modal-disclaimer {
     font-size: 14px;
     color: #000000 !important;
