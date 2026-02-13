@@ -47,14 +47,20 @@ function initAgeVerification() {
     return;
   }
 
-  // Block scrolling while modal is open
+  // Block scrolling while modal is open (position: fixed needed for iOS Safari)
   document.body.style.overflow = 'hidden';
+  document.body.style.position = 'fixed';
+  document.body.style.width = '100%';
+  document.body.style.top = '0';
 
   // Yes button - verify and allow access
   yesBtn?.addEventListener('click', function() {
     localStorage.setItem('skaska-age-verified', 'true');
     modal.classList.add('hidden');
     document.body.style.overflow = 'auto';
+    document.body.style.position = '';
+    document.body.style.width = '';
+    document.body.style.top = '';
   });
 
   // No button - show denied message
@@ -1148,7 +1154,7 @@ const translations = {
     'commitment-what-title': 'What & How',
     'commitment-what-text': 'Plum brandy distilled by honoring a tradition that underlines the culture of welcoming wayfarer with kindness and bonhomie.',
     'commitment-why-title': 'Why',
-    'commitment-why-text': 'There are so much pride and dignity in our people\'s way to honor new friendships with carefully distilled plum brandy, permeated with the lore of true values: honesty and devotion. We take pride in following this culture in the process of distilling "Skaska".',
+    'commitment-why-text': 'There are so much pride and dignity in our people\'s way to honor new friendships with carefully distilled plum brandy, permeated with the lore of true values: honesty and devotion. We take pride in following this culture in the process of distilling Skaska.',
     'commitment-video-long-title': 'Longer version',
     'commitment-video-short-title': 'Shorter version',
     'page-title': 'Commitment - Skaska',
@@ -1533,7 +1539,7 @@ const translations = {
     'commitment-what-title': 'Šta i Kako',
     'commitment-what-text': 'Rakija od šljive, proizvedena uz poštovanje tradicije koja neguje kulturu dobrodošlice prema putniku namerniku kroz neskrivenu radost domaćina da je u prilici ponuditi sve najbolje što ima.',
     'commitment-why-title': 'Zašto',
-    'commitment-why-text': 'Ima toliko ponosa i dostojanstva u činu kojim naši ljudi slave nova prijateljstva, nazdravljajući rakijom prožetom predanjem o vrhunskim vrednostima, o čestitosti i predanosti. Sa ponosom slavimo ovo nasledje kroz proces proizvodnje šumadijske šljivovice "Skaska".',
+    'commitment-why-text': 'Ima toliko ponosa i dostojanstva u činu kojim naši ljudi slave nova prijateljstva, nazdravljajući rakijom prožetom predanjem o vrhunskim vrednostima, o čestitosti i predanosti. Sa ponosom slavimo ovo nasledje kroz proces proizvodnje srpske šljivovice Skaska.',
     'commitment-video-long-title': 'Duža verzija',
     'commitment-video-short-title': 'Kraća verzija',
     'page-title': 'Posvećenost - Skaska',
