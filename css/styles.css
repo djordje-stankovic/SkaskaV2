@@ -3386,13 +3386,11 @@ body.age-verified .age-modal {
   max-width: 750px;
   width: 90%;
   text-align: center;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  position: relative;
+  margin: 10vh auto;
   -webkit-animation: modalFadeIn 1.2s ease;
   animation: modalFadeIn 1.2s ease;
+  box-sizing: border-box;
 }
 
 @-webkit-keyframes modalFadeIn {
@@ -3407,11 +3405,6 @@ body.age-verified .age-modal {
 
 @media (max-height: 600px) {
   .age-modal-content {
-    position: relative;
-    top: auto;
-    left: auto;
-    -webkit-transform: none;
-    transform: none;
     margin: 20px auto;
   }
 }

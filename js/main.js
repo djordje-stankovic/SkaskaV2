@@ -68,14 +68,12 @@ function initAgeVerification() {
   var content = modal.querySelector('.age-modal-content');
   if (content) {
     content.style.background = '#ffffff';
-    content.style.position = 'absolute';
-    content.style.top = '50%';
-    content.style.left = '50%';
-    content.style.webkitTransform = 'translate(-50%, -50%)';
-    content.style.transform = 'translate(-50%, -50%)';
+    content.style.position = 'relative';
     content.style.maxWidth = '750px';
     content.style.width = '90%';
+    content.style.margin = '10vh auto';
     content.style.boxShadow = '2px 8px 23px 3px rgba(0,0,0,0.2)';
+    content.style.boxSizing = 'border-box';
   }
 
   // Yes button - verify and allow access
