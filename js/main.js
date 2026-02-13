@@ -44,14 +44,11 @@ function initAgeVerification() {
   if (localStorage.getItem('skaska-age-verified') === 'true') {
     modal.classList.add('hidden');
     document.body.classList.add('age-verified');
-    document.documentElement.style.overflow = '';
     document.body.style.overflow = '';
     return;
   }
 
-  // Block scrolling - overflow hidden on both html and body
-  // Do NOT use position:fixed on body (breaks iOS Safari fixed children)
-  document.documentElement.style.overflow = 'hidden';
+  // Block scrolling while modal is open
   document.body.style.overflow = 'hidden';
 
   // JS fallback: force critical inline styles for iOS Safari
@@ -82,7 +79,6 @@ function initAgeVerification() {
       localStorage.setItem('skaska-age-verified', 'true');
       modal.classList.add('hidden');
       document.body.classList.add('age-verified');
-      document.documentElement.style.overflow = '';
       document.body.style.overflow = '';
     });
   }
@@ -376,6 +372,17 @@ function initScrollAnimations() {
   setTimeout(() => {
     checkAndTriggerHeroAnimations();
   }, 800);
+
+  // Safari fallback: force visible for elements in viewport that aren't visible yet
+  // Handles cases where IntersectionObserver doesn't fire on Safari
+  setTimeout(function() {
+    document.querySelectorAll('.animate-on-scroll:not(.visible)').forEach(function(el) {
+      var rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('visible');
+      }
+    });
+  }, 2500);
 }
 
 /* =============================================
@@ -1565,7 +1572,7 @@ const translations = {
     'commitment-what-title': 'Šta i Kako',
     'commitment-what-text': 'Rakija od šljive, proizvedena uz poštovanje tradicije koja neguje kulturu dobrodošlice prema putniku namerniku kroz neskrivenu radost domaćina da je u prilici ponuditi sve najbolje što ima.',
     'commitment-why-title': 'Zašto',
-    'commitment-why-text': 'Ima toliko ponosa i dostojanstva u činu kojim naši ljudi slave nova prijateljstva, nazdravljajući rakijom prožetom predanjem o vrhunskim vrednostima, o čestitosti i predanosti. Sa ponosom slavimo ovo nasledje kroz proces proizvodnje srpske šljivovice Skaska.',
+    'commitment-why-text': 'Ima toliko ponosa i dostojanstva u činu kojim naši ljudi slave nova prijateljstva, nazdravljajući rakijom prožetom predanjem o vrhunskim vrednostima, o čestitosti i predanosti. Sa ponosom slavimo ovo nasledje kroz proces proizvodnje srpske šljivovice Skaske.',
     'commitment-video-long-title': 'Duža verzija',
     'commitment-video-short-title': 'Kraća verzija',
     'page-title': 'Posvećenost - Skaska',
