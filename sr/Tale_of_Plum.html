@@ -208,8 +208,6 @@
           <img src="../images/distillery/marko.jpg" alt="Imanje Skaska" loading="lazy">
           <img src="../images/distillery/kazan.jpg" alt="Bakarni kazan" class="thumb-vertical" loading="lazy">
           <img src="../images/gallery/Podrum.jpg" alt="Podrum" loading="lazy">
-        </div>
-        <div class="about-process-feature">
           <img src="../images/gallery/mi6.jpg" alt="Skaska" loading="lazy">
         </div>
         <div class="about-text">
@@ -357,9 +355,7 @@
       if (!lightbox) return;
       var mainImg = document.querySelector('.about-section-process .about-media img');
       var thumbs = document.querySelectorAll('.about-section-process .about-process-thumbs img');
-      var featureImg = document.querySelector('.about-section-process .about-process-feature img');
       var allImgEls = mainImg ? [mainImg].concat(Array.from(thumbs)) : Array.from(thumbs);
-      if (featureImg) allImgEls.push(featureImg);
       if (allImgEls.length === 0) return;
       var lightboxImg = lightbox.querySelector('.lightbox-content img');
       var closeBtn = lightbox.querySelector('.lightbox-close');
