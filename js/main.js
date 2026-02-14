@@ -1786,6 +1786,9 @@ function setLanguage(lang, animate = true) {
             el.textContent = translation;
           }
         }
+        // Zameni href ako postoji data-href-{lang}
+        const langHref = el.getAttribute('data-href-' + lang);
+        if (langHref) el.href = langHref;
       });
 
       // 3. Fade in - ukloni klasu
@@ -1810,6 +1813,9 @@ function setLanguage(lang, animate = true) {
           el.textContent = translation;
         }
       }
+      // Zameni href ako postoji data-href-{lang}
+      const langHref = el.getAttribute('data-href-' + lang);
+      if (langHref) el.href = langHref;
     });
   }
 
