@@ -4166,6 +4166,15 @@ body[lang="sr"] .col-text.animate-on-scroll[style*="max-width: 800px"] p:first-o
 
 /* Distillery page - mobile styles */
 @media (max-width: 768px) {
+  .col-text.animate-on-scroll[style*="max-width: 800px"] p[data-i18n="distillery-intro-text"],
+  .col-text.animate-on-scroll[style*="max-width: 800px"] p:first-of-type:not([data-i18n="paths-text"]):not([data-i18n="ognjen-quote"]) {
+    font-size: 19px !important;
+  }
+  html[lang="sr"] .col-text.animate-on-scroll[style*="max-width: 800px"] p:first-of-type,
+  body[lang="sr"] .col-text.animate-on-scroll[style*="max-width: 800px"] p:first-of-type {
+    font-size: 19px !important;
+  }
+
   .ognjen-quote-text {
     font-size: 1rem !important;
   }

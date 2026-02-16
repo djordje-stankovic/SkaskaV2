@@ -993,7 +993,7 @@ const translations = {
     'about-craftsmanship': 'Craftsmanship',
     'about-craftsmanship-p1': 'Co-founder and 4th generation master distiller, Zoran Jevtović is responsible for Skaska’s character. His experience and refined sensory approach guide the carefully controlled double distillation, shaping the spirit’s elegant and balanced profile.',
     'about-idea': 'Heritage',
-    'about-idea-p1': 'Co-founder Andreja Bošković brings a deep connection to the land and the belief that exceptional brandy begins with exceptional fruit. His philosophy is rooted in respect for nature and the patience artisanal plum brandy demands.',
+    'about-idea-p1': 'Co-founder Andreja Bošković brings a deep connection to the land and the belief that exceptional brandy begins with exceptional fruit. His philosophy is rooted in respect for nature and the patience that artisanal plum brandy demands.',
     'about-vision': 'Vision',
     'about-vision-p1': 'Founder and driving force behind the brand, Marko Popović defined Skaska’s direction from the start — uncompromising quality. His vision brings together family heritage, modern standards, and a strong brand identity.',
     'about-process': 'Process',
