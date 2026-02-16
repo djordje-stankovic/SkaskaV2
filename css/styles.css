@@ -223,6 +223,7 @@ p:not(.footer-definition):not(.footer-copyright) {
   font-size: 19px !important;
 }
 
+
 /* Ensure menu keeps Work Sans font */
 .nav-menu,
 .nav-menu a,
@@ -3845,6 +3846,12 @@ body[data-page="commitment"] .col-text h2[data-i18n="commitment-main-title"] {
   text-transform: none !important;
 }
 
+@media (min-width: 769px) {
+  body[data-page="commitment"] .col-text h2[data-i18n="commitment-main-title"] {
+    font-size: 1.8rem !important;
+  }
+}
+
 /* Commitment page - animation from center (scale up) */
 body[data-page="commitment"] .animate-on-scroll.from-left,
 body[data-page="commitment"] .animate-on-scroll.from-right,
@@ -4095,7 +4102,13 @@ body[data-page="commitment"] #why {
 
 /* Distillery page - intro title font size */
 h2[data-i18n="distillery-intro-title"] {
-  font-size: clamp(1.2rem, 4vw, 1.625rem) !important; /* 26px on desktop, responsive on mobile */
+  font-size: 1.5rem !important;
+}
+
+@media (min-width: 769px) {
+  h2[data-i18n="distillery-intro-title"] {
+    font-size: 1.8rem !important;
+  }
 }
 
 /* Distillery page - intro text (Tradicija se obično...) - use Josefin Sans like original site */
@@ -4103,7 +4116,7 @@ h2[data-i18n="distillery-intro-title"] {
 .col-text.animate-on-scroll[style*="max-width: 800px"] p:first-of-type:not([data-i18n="paths-text"]):not([data-i18n="ognjen-quote"]) {
   font-family: 'Josefin Sans', sans-serif !important;
   font-weight: 300 !important;
-  font-size: 19px !important;
+  font-size: 21px !important;
   line-height: 1.75 !important;
   letter-spacing: 0.01em !important;
   -webkit-font-smoothing: antialiased;
@@ -4115,7 +4128,7 @@ html[lang="sr"] .col-text.animate-on-scroll[style*="max-width: 800px"] p:first-o
 body[lang="sr"] .col-text.animate-on-scroll[style*="max-width: 800px"] p:first-of-type {
   font-family: 'Josefin Sans', sans-serif !important;
   font-weight: 300 !important;
-  font-size: 19px !important;
+  font-size: 21px !important;
   line-height: 1.75 !important;
   letter-spacing: 0.01em !important;
   -webkit-font-smoothing: antialiased;
@@ -4127,7 +4140,7 @@ body[lang="sr"] .col-text.animate-on-scroll[style*="max-width: 800px"] p:first-o
 .col-text p[data-i18n="paths-text"] {
   font-family: 'Josefin Sans', sans-serif !important;
   font-weight: 300 !important;
-  font-size: 19px !important;
+  font-size: 21px !important;
   line-height: 1.75 !important;
   letter-spacing: 0.01em !important;
   -webkit-font-smoothing: antialiased;
@@ -5576,7 +5589,7 @@ select:focus-visible,
       }
 
       .store-card .store-detail span {
-        font-size: 0.8rem;
+        font-size: 1rem;
         text-align: left;
       }
 
@@ -5857,4 +5870,59 @@ select:focus-visible,
 @keyframes fade-up {
   from { opacity: 0; transform: translateY(15px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Desktop only: 21px paragraphs + gallery overrides */
+@media (min-width: 769px) {
+  body {
+    font-size: 21px;
+  }
+
+  p:not(.footer-definition):not(.footer-copyright),
+  .section-content p:not(.footer-definition):not(.footer-copyright),
+  .col-text p:not(.footer-definition):not(.footer-copyright),
+  .section p:not(.footer-definition):not(.footer-copyright),
+  .about-text p:not(.footer-definition):not(.footer-copyright),
+  .store-card p:not(.footer-definition):not(.footer-copyright),
+  .intro-text p:not(.footer-definition):not(.footer-copyright),
+  .buy-section-title,
+  .buy-section-subtitle,
+  .become-partner p:not(.footer-definition):not(.footer-copyright),
+  .hero-intro,
+  .hero-description,
+  .col-text p,
+  .intro-text p {
+    font-size: 21px !important;
+  }
+
+  /* Gallery subtitle + title overrides */
+  body[data-page="gallery"] .section-content p[data-i18n="gallery-sumadija-subtitle"],
+  body[data-page="gallery"] .section-content p[data-i18n="gallery-mellowdy-subtitle"],
+  body[data-page="gallery"] .col-text p[data-i18n="gallery-sumadija-subtitle"],
+  body[data-page="gallery"] .col-text p[data-i18n="gallery-mellowdy-subtitle"] {
+    font-size: 1.8rem !important;
+  }
+
+  body[data-page="gallery"] .col-text h2[data-i18n="gallery-sumadija-title"] {
+    font-size: 3.5rem !important;
+  }
+
+  /* Distillery - paths title */
+  h2[data-i18n="paths-title"] {
+    font-size: 1.8rem !important;
+  }
+
+  /* Gallery - Mellowdy of Bonhomie title */
+  body[data-page="gallery"] h2[data-i18n="gallery-mellowdy-title"] {
+    font-size: 3.5rem !important;
+  }
+
+  .contact-item p,
+  .contact-item a {
+    font-size: 21px;
+  }
+
+  .contact-item h4 {
+    font-size: 17px;
+  }
 }

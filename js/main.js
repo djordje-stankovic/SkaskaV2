@@ -1183,7 +1183,7 @@ const translations = {
     'commitment-definition': 'Skaska (ref. Dictionary) – an oral story with elements of fantasy that was passed down from generation to generation',
     'commitment-main-title': 'The real tradition is not about historical facts nor customs but all about true values passed on.',
     'commitment-where-title': 'Where',
-    'commitment-where-text': 'Produced in the heart of Serbia, called Shumadia and famous for an authentic plum brandy, widely acclaimed for the mellowness of its landscapes and its people.',
+    'commitment-where-text': 'Manufactured in the heart of Serbia, called Shumadia and famous for an authentic plum brandy, widely acclaimed for the mellowness of its landscapes and its people.',
     'commitment-what-title': 'What & How',
     'commitment-what-text': 'Plum brandy distilled by honoring a tradition that underlines the culture of welcoming wayfarer with kindness and bonhomie.',
     'commitment-why-title': 'Why',
